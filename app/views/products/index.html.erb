@@ -1,7 +1,5 @@
 <div id="product_list">
 	<h1>Listing products</h1>
-	
-	<p>Привет, Дима</p>
 
 	<table>
 		<% @products.each do |product| %>
@@ -23,7 +21,7 @@
 											  length: 80)
 								%>
 							</p>
-							<p>$<%= product.price %></p>
+							<p><%= number_to_currency(product.price) %></p>
 						</dd>
 					</dl>
 				</td>

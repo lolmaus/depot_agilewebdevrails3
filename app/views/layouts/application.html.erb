@@ -6,9 +6,24 @@
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body id="store">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "Pragmatic Bookshelf" %>
+  </div> <!-- store -->
 
-<%= yield %>
+  <div id="columns">
+    <div id="side">
+      <a href="http://www....">Home</a><br />
+      <a href="http://www..../faq">Questions</a><br />
+      <a href="http://www..../news">News</a><br />
+      <a href="http://www..../contact">Contact</a><br />
+      <em id="time"><%= @time %></em>
+    </div> <!-- side -->
+    <div id="main">
+      <%= yield %>
+    </div> <!--main -->
+  </div> <!-- columns -->
 
 </body>
 </html>

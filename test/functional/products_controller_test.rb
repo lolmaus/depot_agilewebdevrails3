@@ -51,5 +51,16 @@ class ProductsControllerTest < ActionController::TestCase
 		end
 
 		assert_redirected_to products_path
-	end
+  end
+
+  test "should produce a view with certain elements" do
+
+    get :index
+    assert_response :success
+
+    assert_select '#columns #side a', minimum: 4
+    assert_select '#main .product', 3
+    assert_select 'h3', 'Programming Ruby 1.9'
+    assert_select '.price', /\$[,\d]+\.\d\d/
+  end
 end

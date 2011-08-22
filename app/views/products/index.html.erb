@@ -3,7 +3,7 @@
 
 	<table>
 		<% @products.each do |product| %>
-			<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+			<tr class="<%= cycle('list_line_odd', 'list_line_even') %> product">
 			
 				<td>
 					<%= image_tag(product.image_url, class: 'list_image') unless product.image_url.blank? %>
@@ -12,7 +12,7 @@
 				<td class="list_description">
 					<dl>
 						<dt>
-							<p><%= product.title %></p>
+							<h3 class="product_title"><%= product.title %></h3>
 						</dt>
 						<dd>
 							<p><%= product.manufacturer %></p>
@@ -21,7 +21,7 @@
 											  length: 80)
 								%>
 							</p>
-							<p><%= number_to_currency(product.price) %></p>
+							<p class="price"><%= number_to_currency(product.price) %></p>
 						</dd>
 					</dl>
 				</td>

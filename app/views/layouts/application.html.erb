@@ -21,7 +21,7 @@
 			<a href="http://www..../news">News</a><br />
 			<a href="http://www..../contact">Contact</a><br />
 			<em id="time"><%= @time %></em><br />
-			<%= "<em>You've been here #{pluralize(@index_counter, "time")}.</em><br />".html_safe if @index_counter && @index_counter => 5 %>
+			<%= "<em>You've been here #{pluralize(@index_counter, "time")}.</em><br />".html_safe if @index_counter && (@index_counter >= 5) %>
 		</div> <!-- side -->
 		<div id="main">
 			<%= yield %>
